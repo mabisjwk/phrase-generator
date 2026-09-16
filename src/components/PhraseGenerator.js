@@ -13,7 +13,6 @@ const PhraseGenerator = () => {
             setError(null);
             const response = await axios.get("https://dummyjson.com/quotes/random"); 
             //https://api.quotable.io/random
-            //https://dummyjson.com/quotes/random
             const data = response.data;
 
             setPhrase({
