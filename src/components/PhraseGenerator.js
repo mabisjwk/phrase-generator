@@ -22,18 +22,19 @@ const PhraseGenerator = () => {
             });
         } catch (error) {
             setError("Erro ao buscar frase");
+            setPhrase(null);
         } finally {
             setLoading(false);
         }
     }
 
-    // if(loading) {
-    //     return (
-    //         <div className="min-h-20">
-    //             <p className="text-lg">Loading...</p>
-    //         </div>
-    //     );
-    // }
+    if(loading) {
+        return (
+            <div className="min-h-20">
+                <p className="text-lg">Loading...</p>
+            </div>
+        );
+    }
 
     // if(error) {
     //     return (
@@ -48,10 +49,11 @@ const PhraseGenerator = () => {
             {error && (
                 <p className="text-lg">{error}</p>
             )}
+
             {phrase && (
                 <Phrase text={phrase.quote} author={phrase.author}/> 
             )}
-            <button onClick={getRandomPhrase} className="bg-gradient-to-r from-teal-500 to-sky-500 p-2 rounded-lg shadow-md text-white">{loading ? "Loading..." : "Nova Frase"}</button>
+            <button onClick={getRandomPhrase} className="bg-gradient-to-r from-teal-500 to-sky-500 p-2 rounded-lg shadow-md text-white">Nova frase</button>
         </div>
     );
 
