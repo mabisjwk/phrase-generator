@@ -42,6 +42,7 @@ const PhraseGenerator = () => {
     //     </div>
     //     );
     // }
+    
 
     return (
         <div className="min-h-20 flex flex-col gap-4 items-start">
